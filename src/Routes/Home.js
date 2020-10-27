@@ -26,7 +26,7 @@ export default function ContainedButtons() {
           src='/images/mainLogo.png'
           alt='main-logo'
         />
-        <h2 className={classes.heading}>Coming Soon..</h2>
+        {/* <h2 className={classes.heading}>Coming Soon..</h2> */}
       </div>
     </div>
   );
