@@ -9,6 +9,10 @@ const useStyles = makeStyles((theme) => ({
     placeItems: 'center',
   },
   logo: {},
+  heading: {
+    color: 'pink',
+    textAlign: 'center'
+  }
 }));
 
 export default function ContainedButtons() {
@@ -22,6 +26,7 @@ export default function ContainedButtons() {
           src='/images/mainLogo.png'
           alt='main-logo'
         />
+        <h2 className={classes.heading}>Coming Soon..</h2>
       </div>
     </div>
   );
