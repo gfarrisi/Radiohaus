@@ -2,11 +2,12 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { Button } from '@material-ui/core';
+import Header from '../Components/Heading/Header'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
-    backgroundColor: 'black',
+    backgroundColor: '#010000',
     display: 'grid',
     placeItems: 'center',
     width: '100%',
@@ -40,13 +41,14 @@ export default function ContainedButtons() {
 
   return (
     <div className={classes.root}>
-      <div>
+          <Header></Header>
+      {/* <div>
         <img
           className={classes.logo}
           src='/images/Radiohaus-logo-glow.png'
           alt='main-logo'
         />
-      </div>
+      </div> */}
       <div className={classes.socialContainer}>
 
        <a
