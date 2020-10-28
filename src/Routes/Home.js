@@ -30,9 +30,9 @@ export default function ContainedButtons() {
           alt='main-logo'
         />
       </div>
-      <div>
+      {/* <div>
       <Button color="primary"  variant="contained" component={ Link } to="https://www.instagram.com/theradiohaus/"><InstagramIcon/></Button></div>
-    
+     */}
     </div>
   );
 }
