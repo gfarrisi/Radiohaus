@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'black',
     display: 'grid',
     placeItems: 'center',
+    width: '100%',
   },
   logo: {},
   heading: {
@@ -25,7 +26,7 @@ export default function ContainedButtons() {
       <div>
         <img
           className={classes.logo}
-          src='/images/mainLogo.png'
+          src='/images/Radiohaus-logo-glow.png'
           alt='main-logo'
         />
       </div>
