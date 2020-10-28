@@ -10,12 +10,29 @@ const useStyles = makeStyles((theme) => ({
     display: 'grid',
     placeItems: 'center',
     width: '100%',
+    color: '#FF96D5',
   },
-  logo: {},
-  heading: {
-    color: 'pink',
+  logo: {
+    width: '100%',
+    marginBottom: '0'
+  },
+  socialContainer:{
+    width: '90%',
     textAlign: 'center',
+    marginBottom: '200px',
+   
   },
+  social: {
+    color: 'black',
+    textAlign: 'center',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    paddingLeft: '10px',
+    fontSize: '18px'
+  },
+  footer: {
+    fontSize: '14px'
+  }
 }));
 
 export default function ContainedButtons() {
@@ -30,16 +47,26 @@ export default function ContainedButtons() {
           alt='main-logo'
         />
       </div>
+      <div className={classes.socialContainer}>
 
-      <a
+       <a
         href='https://www.instagram.com/theradiohaus/'
         target='_blank'
         rel='noopener noreferrer'
       >
-        <Button color='primary' variant='contained'>
-          <InstagramIcon />
+        <Button color='primary' variant='contained' >
+          <InstagramIcon /><br></br><div className={classes.social}> Follow us on Instagram!</div>  
         </Button>
+        
       </a>
+    <div>
+       </div>
+      
+     
+      
+    </div>
+      
+      <span className={classes.footer}>&#169; RADIOHAUS 2020</span> 
     </div>
   );
 }
