@@ -1,5 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,8 +29,10 @@ export default function ContainedButtons() {
           src='/images/mainLogo.png'
           alt='main-logo'
         />
-        {/* <h2 className={classes.heading}>Coming Soon..</h2> */}
       </div>
+      <div>
+      <Button color="primary"  variant="contained" component={ Link } to="https://www.instagram.com/theradiohaus/"><InstagramIcon/></Button></div>
+    
     </div>
   );
 }
