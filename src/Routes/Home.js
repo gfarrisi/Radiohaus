@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
   logo: {},
   heading: {
     color: 'pink',
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 }));
 
 export default function ContainedButtons() {
@@ -30,9 +30,16 @@ export default function ContainedButtons() {
           alt='main-logo'
         />
       </div>
-      {/* <div>
-      <Button color="primary"  variant="contained" component={ Link } to="https://www.instagram.com/theradiohaus/"><InstagramIcon/></Button></div>
-     */}
+
+      <a
+        href='https://www.instagram.com/theradiohaus/'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <Button color='primary' variant='contained'>
+          <InstagramIcon />
+        </Button>
+      </a>
     </div>
   );
 }
