@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     logo: {
-      width: '90%',
+      width: '100%',
       marginBottom: '0'
     },
   }));
@@ -26,4 +26,4 @@ const Header = () => {
     
     )
   }
-  export default Header
+  export default Header;

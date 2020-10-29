@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     fontWeight: 'bold',
     paddingLeft: '10px',
-    fontSize: '18px'
+    fontSize: '18px',
   },
   footer: {
     fontSize: '14px'
@@ -41,7 +41,7 @@ export default function ContainedButtons() {
 
   return (
     <div className={classes.root}>
-          <Header></Header>
+         <Header/>
       {/* <div>
         <img
           className={classes.logo}
@@ -49,7 +49,7 @@ export default function ContainedButtons() {
           alt='main-logo'
         />
       </div> */}
-      <div className={classes.socialContainer}>
+      {/* <div className={classes.socialContainer}>
 
        <a
         href='https://www.instagram.com/theradiohaus/'
@@ -61,12 +61,8 @@ export default function ContainedButtons() {
         </Button>
         
       </a>
-    <div>
-       </div>
       
-     
-      
-    </div>
+    </div> */}
       
       <span className={classes.footer}>&#169; RADIOHAUS 2020</span> 
     </div>

@@ -15,9 +15,17 @@ const useStyles =  makeStyles((theme) => ({
       textDecoration: `none`,
       textTransform: `uppercase`,
       color: `white`,
-      fontWeight: '600px',
-      fontSize: '50px',
+      fontWeight: 'bold',
+      fontSize: '20px',
+
+      "&:hover": {
+        textDecoration: `none`,
+        color: '#FF96D5'
+      }
       
+    },
+    appBar: {
+      background: 'none',
     }
 }));
 
@@ -26,22 +34,22 @@ const NavBar = () => {
     const classes = useStyles();
 
     return (
-        <AppBar position="static" >
-        <Toolbar className={"linkText"}>
+        <AppBar position="static" className={classes.appBar} >
+        <Toolbar >
             <Fragment>
-              <Button color="inherit" component={Link} to="/login">
+              <Button className={classes.linkText} color="inherit" component={Link} to="/login">
                 Home
               </Button>
-              <Button color="inherit" component={Link} to="/">
+              <Button className={classes.linkText} color="inherit" component={Link} to="/">
                 Events
               </Button>
-              <Button color="inherit" component={Link} to="/signup">
+              <Button className={classes.linkText} color="inherit" component={Link} to="/signup">
                 Blog
               </Button>
-              <Button color="inherit" component={Link} to="/login">
+              <Button className={classes.linkText} color="inherit" component={Link} to="/login">
                 Gallery
               </Button>
-              <Button color="inherit" component={Link} to="/login">
+              <Button className={classes.linkText} color="inherit" component={Link} to="/login">
                 Submissions
               </Button>
             </Fragment>
