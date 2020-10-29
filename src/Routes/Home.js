@@ -14,13 +14,12 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     width: '100%',
-    marginBottom: '0'
+    marginBottom: '0',
   },
-  socialContainer:{
+  socialContainer: {
     width: '90%',
     textAlign: 'center',
     marginBottom: '200px',
-   
   },
   social: {
     color: 'black',
@@ -28,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     fontWeight: 'bold',
     paddingLeft: '10px',
-    fontSize: '18px'
+    fontSize: '18px',
   },
   footer: {
-    fontSize: '14px'
-  }
+    fontSize: '14px',
+  },
 }));
 
 export default function ContainedButtons() {
@@ -48,25 +47,21 @@ export default function ContainedButtons() {
         />
       </div>
       <div className={classes.socialContainer}>
+        <a
+          href='https://www.instagram.com/theradiohaus/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <Button color='primary' variant='contained'>
+            <InstagramIcon />
+            <br></br>
+            <div className={classes.social}> Follow us on Instagram!</div>
+          </Button>
+        </a>
+        <div></div>
+      </div>
 
-       <a
-        href='https://www.instagram.com/theradiohaus/'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        <Button color='primary' variant='contained' >
-          <InstagramIcon /><br></br><div className={classes.social}> Follow us on Instagram!</div>  
-        </Button>
-        
-      </a>
-    <div>
-       </div>
-      
-     
-      
-    </div>
-      
-      <span className={classes.footer}>&#169; RADIOHAUS 2020</span> 
+      <span className={classes.footer}>&#169; RADIOHAUS 2020</span>
     </div>
   );
 }
