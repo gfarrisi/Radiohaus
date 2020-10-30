@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '10px',
     fontSize: '18px',
   },
+
 }));
 
 export default function ContainedButtons() {
   const classes = useStyles();
-
   return <div className={classes.root}></div>;
 }
