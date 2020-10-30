@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import NavBar from './NavBar';
 import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,6 +24,7 @@ const Header = (props) => {
         src='/images/Radiohaus-logo-glow-header.png'
         alt='header'
       />
+
       <NavBar />
     </div>
   );

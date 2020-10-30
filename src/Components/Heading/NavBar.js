@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
   },
   button: {
+    fontSize: '8px',
     color: 'white',
     '&:hover': {
       color: theme.palette.primary.main,
@@ -19,9 +20,15 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
   },
+
+  buttonGroup: {
+    maxWidth: 'fit-content',
+  },
 }));
 
 const Styles = styled.div`
+  width: 100%;
+  max-width: 300px;
   .Mui-selected {
     color: #ff96d5;
   }
@@ -66,6 +73,7 @@ const NavBar = (props) => {
           value={buttonName}
           exclusive
           onChange={handlebuttonName}
+          className={classes.buttonGroup}
         >
           {routes.map(({ route, name }) => {
             return (
