@@ -1,60 +1,93 @@
-import * as React from "react";
-import { Fragment } from "react";
-// import {AppBar, Tabs, Tab} from '"@material-ui/core';
-import { AppBar, Toolbar, Button, Link } from "@material-ui/core"
-import { makeStyles } from '@material-ui/core/styles';
-import PropTypes from "prop-types";
-
-const useStyles =  makeStyles((theme) => ({
-    navBar: {
-      display: `flex`,
-      justifyContent: `space-between`,
-      backgroundColor: 'none',
+import React from 'react';
+// import PropTypes from 'prop-types';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: theme.spacing(2),
+    color: 'white',
+  },
+  button: {
+    color: 'white',
+    '&:hover': {
+      color: theme.palette.primary.main,
     },
-    linkText: {
-      textDecoration: `none`,
-      textTransform: `uppercase`,
-      color: `white`,
-      fontWeight: 'bold',
-      fontSize: '20px',
-
-      "&:hover": {
-        textDecoration: `none`,
-        color: '#FF96D5'
-      }
-      
+    '&-selected': {
+      color: theme.palette.primary.main,
     },
-    appBar: {
-      background: 'none',
-    }
+  },
 }));
 
-
-const NavBar = () => {
-    const classes = useStyles();
-
-    return (
-        <AppBar position="static" className={classes.appBar} >
-        <Toolbar >
-            <Fragment>
-              <Button className={classes.linkText} color="inherit" component={Link} to="/login">
-                Home
-              </Button>
-              <Button className={classes.linkText} color="inherit" component={Link} to="/">
-                Events
-              </Button>
-              <Button className={classes.linkText} color="inherit" component={Link} to="/signup">
-                Blog
-              </Button>
-              <Button className={classes.linkText} color="inherit" component={Link} to="/login">
-                Gallery
-              </Button>
-              <Button className={classes.linkText} color="inherit" component={Link} to="/login">
-                Submissions
-              </Button>
-            </Fragment>
-        </Toolbar>
-      </AppBar>
-    )
+const Styles = styled.div`
+  .Mui-selected {
+    color: #ff96d5;
   }
-  export default NavBar
+`;
+
+const routes = [
+  {
+    route: '/',
+    name: 'Home',
+  },
+  {
+    route: '/Events',
+    name: 'Events',
+  },
+  {
+    route: '/Blog',
+    name: 'Blog',
+  },
+  {
+    route: '/Gallery',
+    name: 'Gallery',
+  },
+  {
+    route: '/Submissions',
+    name: 'Submissions',
+  },
+];
+
+const NavBar = (props) => {
+  const classes = useStyles();
+  const [buttonName, setButtonName] = React.useState('Home');
+  const handlebuttonName = (event, newButton) => {
+    if (newButton !== null) {
+      setButtonName(newButton);
+    }
+  };
+
+  return (
+    <Styles>
+      <div className={classes.root}>
+        <ToggleButtonGroup
+          value={buttonName}
+          exclusive
+          onChange={handlebuttonName}
+        >
+          {routes.map(({ route, name }) => {
+            return (
+              <ToggleButton
+                value={name}
+                key={name}
+                id={name}
+                className={classes.button}
+                color={'primary'}
+                component={Link}
+                to={route}
+              >
+                {name}
+              </ToggleButton>
+            );
+          })}
+        </ToggleButtonGroup>
+      </div>
+    </Styles>
+  );
+};
+
+NavBar.propTypes = {};
+
+export default NavBar;

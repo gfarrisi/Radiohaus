@@ -1,27 +1,20 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import { Button } from '@material-ui/core';
-import Header from '../Components/Heading/Header'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100vh',
     backgroundColor: '#010000',
     display: 'grid',
     placeItems: 'center',
     width: '100%',
     color: '#FF96D5',
+    minHeight: '500px',
   },
-  logo: {
-    width: '100%',
-    marginBottom: '0'
-  },
-  socialContainer:{
+
+  socialContainer: {
     width: '90%',
     textAlign: 'center',
     marginBottom: '200px',
-   
   },
   social: {
     color: 'black',
@@ -31,9 +24,6 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '10px',
     fontSize: '18px',
   },
-  footer: {
-    fontSize: '14px'
-  }
 }));
 
 export default function ContainedButtons() {
@@ -41,7 +31,6 @@ export default function ContainedButtons() {
 
   return (
     <div className={classes.root}>
-         <Header/>
       {/* <div>
         <img
           className={classes.logo}
@@ -63,8 +52,6 @@ export default function ContainedButtons() {
       </a>
       
     </div> */}
-      
-      <span className={classes.footer}>&#169; RADIOHAUS 2020</span> 
     </div>
   );
 }

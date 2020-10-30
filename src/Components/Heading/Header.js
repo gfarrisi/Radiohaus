@@ -1,29 +1,33 @@
-
-import * as React from "react";
+import React from 'react';
+// import PropTypes from 'prop-types';
 import NavBar from './NavBar';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-    logo: {
-      width: '100%',
-      marginBottom: '0'
-    },
-  }));
-const Header = () => {
-    const classes = useStyles();
+  root: {
+    display: 'grid',
+    placeItems: 'center',
+    backgroundColor: 'black',
+  },
+  image: {
+    width: '40%',
+  },
+}));
 
-    return (
-        <div className={classes.header}>
-             <div>
-                <img
-                    className={classes.logo}
-                    src='/images/Radiohaus-logo-glow-header.png'
-                    alt='main-logo'
-                />
-            </div>
-           <NavBar/>
-        </div>
-    
-    )
-  }
-  export default Header;
+const Header = (props) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <img
+        className={classes.image}
+        src='/images/Radiohaus-logo-glow-header.png'
+        alt='header'
+      />
+      <NavBar />
+    </div>
+  );
+};
+
+Header.propTypes = {};
+
+export default Header;
