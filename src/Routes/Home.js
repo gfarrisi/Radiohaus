@@ -29,29 +29,5 @@ const useStyles = makeStyles((theme) => ({
 export default function ContainedButtons() {
   const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      {/* <div>
-        <img
-          className={classes.logo}
-          src='/images/Radiohaus-logo-glow.png'
-          alt='main-logo'
-        />
-      </div> */}
-      {/* <div className={classes.socialContainer}>
-
-       <a
-        href='https://www.instagram.com/theradiohaus/'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        <Button color='primary' variant='contained' >
-          <InstagramIcon /><br></br><div className={classes.social}> Follow us on Instagram!</div>  
-        </Button>
-        
-      </a>
-      
-    </div> */}
-    </div>
-  );
+  return <div className={classes.root}></div>;
 }
