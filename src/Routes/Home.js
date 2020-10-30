@@ -7,8 +7,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'grid',
     placeItems: 'center',
     width: '100%',
+    minHeight: '700px',
+    height: 'fit-content',
     color: '#FF96D5',
-    minHeight: '500px',
   },
 
   socialContainer: {
@@ -24,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '10px',
     fontSize: '18px',
   },
-
 }));
 
 export default function ContainedButtons() {

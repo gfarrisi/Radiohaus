@@ -5,6 +5,10 @@ const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: 'black',
     textAlign: 'center',
+    position: 'absolute',
+
+    margin: 'auto',
+    width: '100%',
   },
 
   footer: {
