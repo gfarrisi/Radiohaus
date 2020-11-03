@@ -1,18 +1,24 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import ToggleButton from '@material-ui/lab/ToggleButton';
+import Button from '@material-ui/core/Button';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(2),
     color: 'white',
   },
   button: {
-    fontSize: '8px',
+    fontSize: '16px',
+    fontFamily: 'BlinkMacSystemFont',
     color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: theme.spacing(4),
     '&:hover': {
       color: theme.palette.primary.main,
     },
@@ -20,17 +26,27 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
   },
-
-  buttonGroup: {
-    maxWidth: 'fit-content',
+  grid: {
+    textAlign: 'center',
+    justifyContent: 'space-evenly',
+  },
+  gridItem: {
+    [theme.breakpoints.down('xs')]: {
+      padding: '0px',
+    },
   },
 }));
 
 const Styles = styled.div`
   width: 100%;
-  max-width: 300px;
+  display: flex;
+  justify-content: center;
   .Mui-selected {
     color: #ff96d5;
+  }
+
+  .MuiGrid-spacing-xs-6 > .MuiGrid-item {
+    padding: 0px;
   }
 `;
 
@@ -59,6 +75,7 @@ const routes = [
 
 const NavBar = (props) => {
   const classes = useStyles();
+
   const [buttonName, setButtonName] = React.useState('Home');
   const handlebuttonName = (event, newButton) => {
     if (newButton !== null) {
@@ -75,21 +92,32 @@ const NavBar = (props) => {
           onChange={handlebuttonName}
           className={classes.buttonGroup}
         >
-          {routes.map(({ route, name }) => {
-            return (
-              <ToggleButton
-                value={name}
-                key={name}
-                id={name}
-                className={classes.button}
-                color={'primary'}
-                component={Link}
-                to={route}
-              >
-                {name}
-              </ToggleButton>
-            );
-          })}
+          <Grid className={classes.grid} container spacing={6}>
+            {routes.map(({ route, name }) => {
+              return (
+                <Grid
+                  key={name}
+                  item
+                  xs={12}
+                  sm={6}
+                  md={6}
+                  lg={2}
+                  className={classes.gridItem}
+                >
+                  <Button
+                    value={name}
+                    id={name}
+                    className={classes.button}
+                    color={'primary'}
+                    component={Link}
+                    to={route}
+                  >
+                    {name}
+                  </Button>
+                </Grid>
+              );
+            })}
+          </Grid>
         </ToggleButtonGroup>
       </div>
     </Styles>
