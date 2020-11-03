@@ -1,5 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import SpotifyPlayer from 'react-spotify-player';
+
+// size may also be a plain string using the presets 'large' or 'compact'
+const size = {
+  width: '100%',
+  height: 300,
+};
+const view = 'list'; // or 'coverart'
+const theme = 'black'; // or 'white'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,23 +21,60 @@ const useStyles = makeStyles((theme) => ({
     height: 'fit-content',
     color: '#FF96D5',
   },
-
-  socialContainer: {
-    width: '90%',
-    textAlign: 'center',
-    marginBottom: '200px',
+  spotify: {
+    maxWidth: '800px',
+    margin: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: '200px',
+    },
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '600px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '400px',
+    },
   },
-  social: {
-    color: 'black',
-    textAlign: 'center',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    paddingLeft: '10px',
-    fontSize: '18px',
+  imageContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  image: {
+    width: '100%',
+    maxWidth: '800px',
+    margin: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: '200px',
+    },
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '600px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '400px',
+    },
   },
 }));
 
-export default function ContainedButtons() {
+const Home = () => {
   const classes = useStyles();
-  return <div className={classes.root}></div>;
-}
+  return (
+    <div className={classes.root}>
+      <Container className={classes.imageContainer}>
+        <img
+          className={classes.image}
+          src='/images/BannerHaus.jpg'
+          alt='banner'
+        />
+      </Container>
+      <Container className={classes.spotify}>
+        <SpotifyPlayer
+          uri='spotify:album:1TIUsv8qmYLpBEhvmBmyBk'
+          size={size}
+          view={view}
+          theme={theme}
+        />
+      </Container>
+    </div>
+  );
+};
+
+export default Home;

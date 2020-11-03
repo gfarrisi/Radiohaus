@@ -6,7 +6,6 @@ const useStyles = makeStyles(() => ({
     backgroundColor: 'black',
     textAlign: 'center',
     position: 'absolute',
-
     margin: 'auto',
     width: '100%',
   },
