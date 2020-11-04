@@ -61,13 +61,13 @@ const Home = () => {
       <Container className={classes.imageContainer}>
         <img
           className={classes.image}
-          src='/images/BannerHaus.jpg'
+          src='/images/radiohaus-banner.jpg'
           alt='banner'
         />
       </Container>
       <Container className={classes.spotify}>
         <SpotifyPlayer
-          uri='spotify:album:1TIUsv8qmYLpBEhvmBmyBk'
+          uri='spotify:playlist:7GecIheaGLkzNxS5DYbnPf'
           size={size}
           view={view}
           theme={theme}
