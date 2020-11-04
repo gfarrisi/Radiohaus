@@ -1,0 +1,26 @@
+[
+    {
+        "artist": "JAYO",
+        "imgUrl": "/images/artists/lovelyOceans.jpg",
+        "spotifyUrl": "https://open.spotify.com/artist/1kBx4RzRD8An5pUEDBGZQ9?si=Hjl7HaOdQcej6ddmS4HzJA",
+        "instagramUrl": "https://www.instagram.com/jayo/",
+        "eventDate": "11-16-2020",
+        "eventTime": "19:00"
+    },
+    {
+        "artist": "Gloria Deo",
+        "imgUrl": "/images/artists/lovelyOceans.jpg",
+        "spotifyUrl": "https://open.spotify.com/artist/1kBx4RzRD8An5pUEDBGZQ9?si=Hjl7HaOdQcej6ddmS4HzJA",
+        "instagramUrl": "https://www.instagram.com/jayo/",
+        "eventDate": "11-20-2020",
+        "eventTime": "19:00"
+    },
+    {
+        "artist": "Ellie Farrisi",
+        "imgUrl": "/images/artists/lovelyOceans.jpg",
+        "spotifyUrl": "https://open.spotify.com/artist/1kBx4RzRD8An5pUEDBGZQ9?si=Hjl7HaOdQcej6ddmS4HzJA",
+        "instagramUrl": "https://www.instagram.com/jayo/",
+        "eventDate": "11-25-2020",
+        "eventTime": "19:00"
+    }
+]

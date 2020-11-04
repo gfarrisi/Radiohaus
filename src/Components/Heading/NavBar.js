@@ -3,6 +3,7 @@ import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import Button from '@material-ui/core/Button';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import MobileNav from './MobileNavBar';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -11,6 +12,22 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(2),
     color: 'white',
+  },
+  buttonGroup: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
+  mobileNav: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
   },
   button: {
     fontSize: '16px',
@@ -119,6 +136,9 @@ const NavBar = (props) => {
             })}
           </Grid>
         </ToggleButtonGroup>
+        <div className={classes.mobileNav}>
+          <MobileNav routes={routes} />
+        </div>
       </div>
     </Styles>
   );
